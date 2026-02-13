@@ -13,7 +13,7 @@ public class RedirectController : ControllerBase
         _service = service;
     }
 
-    [HttpGet("/{shortCode}")]
+    [HttpGet("/{shortCode:regex(^[a-zA-Z0-9]{{6,10}}$)}")]
     public async Task<IActionResult> RedirectToLongUrl(string shortCode)
     {
         var longUrl = await _service.ResolveAsync(
