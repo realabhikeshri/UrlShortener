@@ -5,7 +5,6 @@ using UrlShortener.Application.Interfaces;
 
 namespace UrlShortener.Api.Controllers;
 
-[EnableRateLimiting("fixed")]
 [ApiController]
 [Route("api/urls")]
 public class UrlsController : ControllerBase
